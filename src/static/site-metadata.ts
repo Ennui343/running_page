@@ -17,7 +17,7 @@ const getBasePath = () => {
 const data: ISiteMetadataResult = {
   siteTitle: 'Ennui Running',
   siteUrl: 'https://ennui343.github.io/running_page/',
-  logo: 'public/images/icon.png',
+  logo: '/running_page/images/icon.png',
   description: 'Personal site and blog',
   navLinks: [
     {
