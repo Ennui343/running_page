@@ -62,6 +62,11 @@ class Garmin:
         garth.client.loads(secret_string)
         if garth.client.oauth2_token.expired:
             garth.client.refresh_token()
+        token_output_path = os.getenv("GARMIN_TOKEN_OUTPUT_PATH")
+        if token_output_path:
+            with open(token_output_path, "w", encoding="utf-8") as token_file:
+                token_file.write(garth.client.dumps())
+      
 
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36",
